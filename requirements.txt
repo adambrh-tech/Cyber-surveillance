@@ -1,0 +1,9 @@
+# requirements.txt (exemple)
+tensorflow
+pandas
+numpy
+scikit-learn
+joblib
+
+# puis
+pip install -r requirements.txt
