@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-surveillance | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">⬡</div>
+            <div>
+                <h2>Cyber<span>Watch</span></h2>
+                <small>THREAT INTELLIGENCE</small>
+            </div>
+        </div>
+
+        <p class="menu-label">MENU PRINCIPAL</p>
+        <nav>
+            <a class="nav-link active" href="#dashboard">▦ <span>Dashboard</span></a>
+            <a class="nav-link" href="#analytics">◷ <span>Analyse des menaces</span></a>
+            <a class="nav-link" href="#alerts">⚠ <span>Alertes</span></a>
+            <a class="nav-link" href="#ai">⌘ <span>Modèles IA</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <div>
+                    <strong>API Backend</strong>
+                    <small id="api-status">Vérification...</small>
+                </div>
+            </div>
+            <p class="version">CYBER-SURVEILLANCE · v1.0</p>
+        </div>
+    </aside>
+
+    <main class="main" id="dashboard">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">CENTRE DE SUPERVISION</p>
+                <h1>Dashboard de sécurité</h1>
+                <p class="subtitle">Vue d'ensemble des événements et des cybermenaces.</p>
+            </div>
+            <button class="refresh-btn" id="refresh-btn">↻ Actualiser</button>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">SURVEILLANCE INTELLIGENTE</p>
+                <h2>Détecter. Analyser. Protéger.</h2>
+                <p>Une vue centralisée pour explorer les événements de cybersécurité et les résultats de l'IA.</p>
+            </div>
+            <div class="shield">⬡</div>
+        </section>
+
+        <section class="section-heading">
+            <div>
+                <h2>Indicateurs clés</h2>
+                <p>Résumé des données disponibles</p>
+            </div>
+            <span class="tag">DONNÉES API</span>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-top"><span>Événements analysés</span><span class="stat-icon blue">▤</span></div>
+                <strong id="total-logs">—</strong>
+                <small>Total des logs traités</small>
+            </article>
+            <article class="stat-card">
+                <div class="stat-top"><span>Attaques détectées</span><span class="stat-icon purple">⌁</span></div>
+                <strong id="total-attacks">—</strong>
+                <small>Événements identifiés comme attaques</small>
+            </article>
+            <article class="stat-card">
+                <div class="stat-top"><span>Alertes critiques</span><span class="stat-icon red">⚠</span></div>
+                <strong id="critical-alerts">—</strong>
+                <small>Alertes de priorité élevée</small>
+            </article>
+            <article class="stat-card">
+                <div class="stat-top"><span>Modèle IA</span><span class="stat-icon green">⌘</span></div>
+                <strong class="model-name" id="model-name">—</strong>
+                <small id="model-status">En attente des données</small>
+            </article>
+        </section>
+
+        <section class="content-grid" id="analytics">
+            <article class="panel chart-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Activité des menaces</h2>
+                        <p>Exemple de visualisation — données de démonstration</p>
+                    </div>
+                    <span class="tag">DÉMO</span>
+                </div>
+                <div class="chart-wrap">
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Types de menaces</h2>
+                        <p>Répartition illustrative</p>
+                    </div>
+                </div>
+                <div class="chart-wrap doughnut-wrap">
+                    <canvas id="threatChart"></canvas>
+                </div>
+                <p class="chart-note">Les graphiques utilisent des données fictives tant que les données réelles ne sont pas connectées.</p>
+            </article>
+        </section>
+
+        <section class="panel alerts-panel" id="alerts">
+            <div class="panel-heading">
+                <div>
+                    <h2>Journal des alertes</h2>
+                    <p>Exemples d'alertes — non issues de détections réelles</p>
+                </div>
+                <span class="tag">DÉMO</span>
+            </div>
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ÉVÉNEMENT</th>
+                            <th>TYPE</th>
+                            <th>PRIORITÉ</th>
+                            <th>STATUT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Activité réseau suspecte</td>
+                            <td>Trafic réseau</td>
+                            <td><span class="severity high">Élevée</span></td>
+                            <td><span class="event-status">Exemple</span></td>
+                        </tr>
+                        <tr>
+                            <td>Tentatives de connexion répétées</td>
+                            <td>Authentification</td>
+                            <td><span class="severity medium">Moyenne</span></td>
+                            <td><span class="event-status">Exemple</span></td>
+                        </tr>
+                        <tr>
+                            <td>Payload potentiellement suspect</td>
+                            <td>Analyse de contenu</td>
+                            <td><span class="severity critical">Critique</span></td>
+                            <td><span class="event-status">Exemple</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <span>Cyber-surveillance · Projet ingénierie & cybersécurité</span>
+            <span id="last-update">En attente de connexion à l'API</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
